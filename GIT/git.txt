@@ -1,0 +1,34 @@
+Problem Statement - 1
+	mkdir Student_Management_System
+	cd Student_Management_System
+	git init
+	cat > Readme.md
+		Readme file created
+	git status
+	git add .
+	git commit -m "Initial commit"
+
+Problem Statement - 2
+	git branch feature-login
+	git switch feature-login
+	cat > login.txt
+		login file added
+	git add .
+	git commit -m "login file created"
+	git switch master
+	git merge feature-login
+
+Problem Statement - 3
+	git remote add origin "(URL)"
+	git push -u origin master
+
+Problem Statement - 4
+	git branch feature-next
+	git switch feature-next
+	cat > Next.txt
+		new file added in feature-next branch
+	git add .
+	git commit -m "New file added"
+	git push origin feature-next
+
+	(Create a pull request in GitHub and merge it)

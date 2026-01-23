@@ -17,17 +17,17 @@ public class ShowController {
     @Autowired
     ShowService showService;
 
-    @PostMapping(value = "/api/shows", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/shows", consumes = MediaType.APPLICATION_JSON_VALUE)
     public Show createShow(@RequestBody Show s) {
-        return showService.createShow(s);
+        return showService.createShows(s);
     }
 
-    @GetMapping(value = "/api/shows", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/shows", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Map<String, Object>> getAllShows() {
         return showService.getAllShows();
     }
 
-    @GetMapping(value = "/api/shows/{movieId}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/shows/{movieId}", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Map<String, Object>> getShowByMovie(@PathVariable int movieId) {
         return showService.getShowByMovie(movieId);
     }

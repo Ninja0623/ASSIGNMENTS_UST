@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface ShowRepository extends JpaRepository<Show, Integer> {
-    List<Show> findShowByMovie_Movieid(int movieid);
+    List<Show> findShowByMovie_MovieId(int movieId);
 }

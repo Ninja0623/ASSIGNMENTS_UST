@@ -13,13 +13,13 @@ public class MovieService {
     @Autowired
     private MovieRepository movieRepository;
 
-    public Movie addMovie(Movie m) {
+    public Movie addMovies(Movie m) {
 
         Movie savedMovie = movieRepository.save(m);
         return savedMovie;
     }
 
-    public List<Movie> getAllMovie() {
+    public List<Movie> getAllMovies() {
 
         List<Movie> movies = movieRepository.findAll();
         return movies;
@@ -27,7 +27,7 @@ public class MovieService {
 
     public Optional<Movie> checkMovieId(Movie m) {
 
-        Integer movieId = m.getMovieid();
+        Integer movieId = m.getMovieId();
         Optional<Movie> movie = movieRepository.findById(movieId);
 
         return movie;

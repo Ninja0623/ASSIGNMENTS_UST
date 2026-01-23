@@ -28,7 +28,7 @@ public class BookingService {
         return response;
     }
 
-    public Map<String, Object> createBooking(Booking booking) {
+    public Map<String, Object> createBookings(Booking booking) {
 
         Optional<Show> show =
                 showService.checkShowId(booking.getShow().getShowId());
@@ -63,7 +63,7 @@ public class BookingService {
         return response;
     }
 
-    public String cancelBooking(int bookingId) {
+    public String cancelBookings(int bookingId) {
 
         Optional<Booking> booking =
                 bookingRepository.findById(bookingId);

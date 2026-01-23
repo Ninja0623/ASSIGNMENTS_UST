@@ -3,19 +3,19 @@ package com.ust.SimpleMovieBookingApplication.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "movie")
+@Table(name = "movies")
 public class Movie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int movieid;
+    private int movieId;
     private String title;
     private String genre;
     private int duration;
-    public int getMovieid() {
-        return movieid;
+    public int getMovieId() {
+        return movieId;
     }
-    public void setMovieid(int movieid) {
-        this.movieid = movieid;
+    public void setMovieId(int movieId) {
+        this.movieId = movieId;
     }
     public String getTitle() {
         return title;
@@ -35,8 +35,8 @@ public class Movie {
     public void setDuration(int duration) {
         this.duration = duration;
     }
-    public Movie(int movieid, String title, String genre, int duration) {
-        this.movieid=movieid;
+    public Movie(int movieId, String title, String genre, int duration) {
+        this.movieId=movieId;
         this.title = title;
         this.genre = genre;
         this.duration = duration;
@@ -44,8 +44,13 @@ public class Movie {
     public Movie() {
 
     }
-    public Movie(int movieid) {
-        this.movieid=movieid;
+//    public Movie( String title, String genre, int duration) {
+//        this.title = title;
+//        this.genre = genre;
+//        this.duration = duration;
+//    }
+    public Movie(int movieId) {
+        this.movieId=movieId;
     }
 
 

@@ -18,7 +18,7 @@ public class ShowService {
     @Autowired
     private MovieService movieService;
 
-    public Show createShow(Show show) {
+    public Show createShows(Show show) {
 
         Optional<Movie> movie =
                 movieService.checkMovieId(show.getMovie());
@@ -40,13 +40,13 @@ public class ShowService {
         for (Show s : result) {
 
             Map<String, Object> movieMap = new LinkedHashMap<>();
-            movieMap.put("movieId", s.getMovie().getMovieid());
+            movieMap.put("movieId", s.getMovie().getMovieId());
             movieMap.put("title", s.getMovie().getTitle());
 
             Map<String, Object> showMap = new LinkedHashMap<>();
             showMap.put("showId", s.getShowId());
             showMap.put("showtime", s.getShowTime());
-            showMap.put("availableseat", s.getAvailableSeats());
+            showMap.put("availableSeats", s.getAvailableSeats());
             showMap.put("movie", movieMap);
 
             response.add(showMap);
@@ -58,7 +58,7 @@ public class ShowService {
     public List<Map<String, Object>> getShowByMovie(int mid) {
 
         List<Show> result =
-                showRepository.findShowByMovie_Movieid(mid);
+                showRepository.findShowByMovie_MovieId(mid);
 
         List<Map<String, Object>> response = new ArrayList<>();
 

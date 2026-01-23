@@ -4,6 +4,7 @@ package com.ust.SimpleMovieBookingApplication.entity;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "shows")
 public class Show {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -54,7 +55,7 @@ public class Show {
     private int totalSeats;
     private int availableSeats;
     @ManyToOne
-    @JoinColumn(name="movieid")
+    @JoinColumn(name="movieId")
     private Movie movie;
 
     public Show(int showId, String showTime, int totalSeats, int availableSeats, Movie movie) {

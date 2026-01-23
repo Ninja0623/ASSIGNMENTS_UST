@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class Movie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int movieId;
+    private Integer movieId;
     private String title;
     private String genre;
     private int duration;
@@ -35,20 +35,20 @@ public class Movie {
     public void setDuration(int duration) {
         this.duration = duration;
     }
-    public Movie(int movieId, String title, String genre, int duration) {
-        this.movieId=movieId;
-        this.title = title;
-        this.genre = genre;
-        this.duration = duration;
-    }
-    public Movie() {
-
-    }
-//    public Movie( String title, String genre, int duration) {
+//    public Movie(int movieId, String title, String genre, int duration) {
+//        this.movieId=movieId;
 //        this.title = title;
 //        this.genre = genre;
 //        this.duration = duration;
 //    }
+    public Movie() {
+
+    }
+    public Movie( String title, String genre, int duration) {
+        this.title = title;
+        this.genre = genre;
+        this.duration = duration;
+    }
     public Movie(int movieId) {
         this.movieId=movieId;
     }
